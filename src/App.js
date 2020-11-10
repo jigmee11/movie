@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import Movie from './movie'
+import Former from './form'
+import MovieList from './MovieList'
+const App = () => {
+  const [movies, setMovies] = useState([{rating: "10", name: "demon slayer", src: "https://m.media-amazon.com/images/M/MV5BODA2MWY3ZWQtZGQ2Ni00Njc4LWE5NTItYTFkMmJkMzM1ZDYzXkEyXkFqcGdeQXVyODEyMDIxNDY@._V1_.jpg"}])
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  return(
+    <div className={"parent"}>
+      <MovieList movies={movies}/>
+      <Former setMovies={setMovies}/>
     </div>
   );
 }
-
 export default App;
